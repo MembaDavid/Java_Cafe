@@ -17,14 +17,27 @@ public class MainActivity extends AppCompatActivity {
 
     CardView startersCard;
     CardView mainCard;
+    CardView dessertCard;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+
         startersCard = findViewById(R.id.card_view_starters);
         mainCard = findViewById(R.id.card_view_main);
+        dessertCard = findViewById(R.id.card_view_dessert);
+
+
 
         startersCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mainCoursesActivityIntent);
             }
         });
+        dessertCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dessertActivityIntent = new Intent(MainActivity.this, DessertActivity.class);
+                startActivity(dessertActivityIntent);
+            }
+        });
+
 
         TextView emailAddressTextView = findViewById(R.id.text_view_email_address);
         emailAddressTextView.setOnClickListener(new View.OnClickListener() {

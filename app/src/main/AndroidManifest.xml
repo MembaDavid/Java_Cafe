@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JavaCafe">
         <activity
+            android:name=".DessertActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".StarterActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainCoursesActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
