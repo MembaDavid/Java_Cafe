@@ -13,16 +13,13 @@
         android:theme="@style/Theme.JavaCafe">
         <activity
             android:name=".StarterActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ui.StarterActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/Theme.JavaCafe" />-->
-<!--        <activity-->
-<!--            android:name=".MainActivity2"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_main2"-->
-<!--            android:theme="@style/Theme.JavaCafe" />-->
+        <activity
+            android:name=".MainCoursesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
