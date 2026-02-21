@@ -1,8 +1,10 @@
 package com.neobossconcepts.javacafe;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +33,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startersActivityIntent);
             }
         });
+        mainCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainCoursesActivityIntent = new Intent(MainActivity.this, MainCoursesActivity.class);
+                startActivity(mainCoursesActivityIntent);
+            }
+        });
 
+        TextView emailAddressTextView = findViewById(R.id.text_view_email_address);
+        emailAddressTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:davythedeveloper@neoboss.com"));
+                startActivity(emailIntent);
+
+            }
+        });
     }
+
+
 }
